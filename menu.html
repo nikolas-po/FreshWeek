@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Меню рационов — FreshWeek</title>
+  <meta name="description" content="Каталог готовых рационов на неделю: похудение, набор массы, веганские меню. Фильтры по калорийности и цене.">
+  <meta name="theme-color" content="#2E7D4F">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap&subset=cyrillic" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="menu">
+<main id="main">
+  <div class="container">
+    <p class="crumbs"><a href="index.html">Главная</a> / Меню</p>
+    <div class="page-head" style="padding-top:12px">
+      <h1>Меню рационов</h1>
+      <p class="section-sub">Готовые рационы на неделю — выберите цель и калорийность</p>
+    </div>
+
+    <div class="filters">
+      <div>
+        <div class="chips" id="goalChips" role="group" aria-label="Цель">
+          <button class="chip" type="button" data-goal="all">Все</button>
+          <button class="chip" type="button" data-goal="loss">Похудение</button>
+          <button class="chip" type="button" data-goal="mass">Набор массы</button>
+          <button class="chip" type="button" data-goal="vegan">Веган</button>
+        </div>
+        <div class="kcal-row" style="margin-top:20px">
+          <span class="muted">Калорийность:</span>
+          <div class="chips" id="kcalChips" role="group" aria-label="Калорийность">
+            <button class="chip sm" type="button" data-kcal="1200">1200 ккал</button>
+            <button class="chip sm" type="button" data-kcal="1500">1500 ккал</button>
+            <button class="chip sm" type="button" data-kcal="1800">1800 ккал</button>
+            <button class="chip sm" type="button" data-kcal="2200">2200 ккал</button>
+            <button class="chip sm" type="button" data-kcal="2800">2800 ккал</button>
+          </div>
+        </div>
+      </div>
+      <div class="filters-right">
+        <select class="select" id="sort" aria-label="Сортировка">
+          <option value="popular">Сортировка: популярные</option>
+          <option value="price-asc">Сортировка: по цене ↑</option>
+          <option value="price-desc">Сортировка: по цене ↓</option>
+          <option value="kcal-asc">Сортировка: калории ↑</option>
+          <option value="kcal-desc">Сортировка: калории ↓</option>
+        </select>
+        <div class="seg" id="daysSeg" role="group" aria-label="Срок">
+          <button type="button" data-days="5">5 дней</button>
+          <button type="button" data-days="7">7 дней</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="result-bar">
+      <span class="muted" id="count" aria-live="polite"></span>
+      <button class="link" type="button" id="reset">Сбросить фильтры</button>
+    </div>
+
+    <div class="grid-cards" id="grid"></div>
+
+    <div class="help-banner">
+      <div>
+        <h2>Не уверены, что выбрать?</h2>
+        <p>Калькулятор подберёт рацион под ваш рост, вес и цель.</p>
+      </div>
+      <a class="btn btn-primary" href="index.html#calculator">Рассчитать калории</a>
+    </div>
+  </div>
+</main>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
